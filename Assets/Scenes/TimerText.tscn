@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Fontes/PinkChicken.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Scripts/Timer.gd" type="Script" id=2]
+
+
+[node name="TimerText" type="RichTextLabel"]
+margin_left = 813.357
+margin_top = 4.0
+margin_right = 921.357
+margin_bottom = 41.0
+rect_scale = Vector2( 3, 3 )
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+bbcode_enabled = true
+bbcode_text = "[center]  [/center]"
+text = "  "
+scroll_active = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

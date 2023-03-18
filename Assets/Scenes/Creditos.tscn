@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Botoes/VoltarCreditos_Hover.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Imagens/Creditos.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Botoes/VoltarCreditos.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Botoes/VoltarCreditos_Selected.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Scripts/Creditos.gd" type="Script" id=5]
+
+[node name="Creditos" type="CanvasLayer"]
+layer = 9
+script = ExtResource( 5 )
+
+[node name="Overlay" type="ColorRect" parent="."]
+visible = false
+margin_right = 1922.0
+margin_bottom = 1089.0
+color = Color( 0.0196078, 0.0196078, 0.0196078, 0.643137 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoClick" type="Control" parent="."]
+visible = false
+margin_right = 1922.0
+margin_bottom = 1089.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditosIMG" type="NinePatchRect" parent="."]
+visible = false
+margin_left = 605.888
+margin_top = 74.4387
+margin_right = 1313.89
+margin_bottom = 1015.44
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VoltarCreditos" type="TextureButton" parent="."]
+visible = false
+margin_left = 1098.64
+margin_top = 818.071
+margin_right = 1221.64
+margin_bottom = 941.071
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VoltarCreditos" to="." method="_on_VoltarCreditos_pressed"]

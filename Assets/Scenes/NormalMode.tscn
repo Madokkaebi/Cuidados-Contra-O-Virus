@@ -1,0 +1,241 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Assets/Scenes/Carta.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Imagens/TabuleiroDefault.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Scripts/NormalMode.gd" type="Script" id=3]
+[ext_resource path="res://Assets/OST/3 - Normal.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Botoes/Voltar_Selected.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Botoes/Voltar.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Botoes/Voltar_Hover.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Cartas/Overlay.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Imagens/Vitoria.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Botoes/Sim.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Botoes/Sim_Selected.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Imagens/MenuVoltarDefault.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Botoes/Nao.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Botoes/Sim_Hover.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Botoes/Nao_Hover.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Botoes/Nao_Selected.png" type="Texture" id=16]
+[ext_resource path="res://Assets/OST/Clique.wav" type="AudioStream" id=17]
+[ext_resource path="res://Assets/OST/5 - Vitoria BGM.ogg" type="AudioStream" id=18]
+[ext_resource path="res://Assets/Scenes/TimerText.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Assets/Fontes/PinkChicken.tres" type="DynamicFont" id=20]
+[ext_resource path="res://Assets/Botoes/VoltarVitoria_Selected.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Botoes/VoltarVitoria_Hover.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Botoes/VoltarVitoria.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Fontes/PinkChicken-Regular.ttf" type="DynamicFontData" id=24]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+font_data = ExtResource( 24 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 24 )
+
+[node name="NormalMode" type="Node"]
+__meta__ = {
+"_edit_vertical_guides_": [ 960.264 ]
+}
+
+[node name="Main" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="BGImage" type="NinePatchRect" parent="Main"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Carta1" parent="Main/BGImage" instance=ExtResource( 1 )]
+position = Vector2( -7.55101, -109.489 )
+scale = Vector2( 1.00768, 1.00768 )
+
+[node name="Carta2" parent="Main/BGImage" instance=ExtResource( 1 )]
+position = Vector2( 432.294, -117.04 )
+scale = Vector2( 1.008, 1.008 )
+
+[node name="Carta3" parent="Main/BGImage" instance=ExtResource( 1 )]
+position = Vector2( 906.119, -111.377 )
+scale = Vector2( 1.008, 1.008 )
+
+[node name="Carta4" parent="Main/BGImage" instance=ExtResource( 1 )]
+position = Vector2( 1340.3, -115.153 )
+scale = Vector2( 1.008, 1.008 )
+
+[node name="Carta5" parent="Main/BGImage" instance=ExtResource( 1 )]
+position = Vector2( -7.55101, 220.867 )
+scale = Vector2( 1.00768, 1.00768 )
+
+[node name="Carta6" parent="Main/BGImage" instance=ExtResource( 1 )]
+position = Vector2( 432.294, 213.316 )
+scale = Vector2( 1.008, 1.008 )
+
+[node name="Carta7" parent="Main/BGImage" instance=ExtResource( 1 )]
+position = Vector2( 906.119, 218.979 )
+scale = Vector2( 1.008, 1.008 )
+
+[node name="Carta8" parent="Main/BGImage" instance=ExtResource( 1 )]
+position = Vector2( 1340.3, 215.203 )
+scale = Vector2( 1.008, 1.008 )
+
+[node name="Carta9" parent="Main/BGImage" instance=ExtResource( 1 )]
+position = Vector2( -7.55101, 553.11 )
+scale = Vector2( 1.00768, 1.00768 )
+
+[node name="Carta10" parent="Main/BGImage" instance=ExtResource( 1 )]
+position = Vector2( 432.294, 545.559 )
+scale = Vector2( 1.008, 1.008 )
+
+[node name="Carta11" parent="Main/BGImage" instance=ExtResource( 1 )]
+position = Vector2( 906.119, 551.223 )
+scale = Vector2( 1.008, 1.008 )
+
+[node name="Carta12" parent="Main/BGImage" instance=ExtResource( 1 )]
+position = Vector2( 1340.3, 547.447 )
+scale = Vector2( 1.008, 1.008 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="Main/BGImage"]
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="Click" type="AudioStreamPlayer" parent="Main/BGImage"]
+stream = ExtResource( 17 )
+
+[node name="Voltar1" type="TextureButton" parent="Main/BGImage"]
+margin_left = 1807.0
+margin_top = 11.0
+margin_right = 1909.0
+margin_bottom = 113.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerText" parent="Main/BGImage" instance=ExtResource( 19 )]
+margin_left = 639.715
+margin_top = -23.3303
+margin_right = 1283.71
+margin_bottom = 75.6697
+rect_scale = Vector2( 1, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_text = "[center] [/center]
+"
+text = " 
+"
+
+[node name="Overlay" type="NinePatchRect" parent="Main/BGImage"]
+visible = false
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vitoria" type="NinePatchRect" parent="Main/BGImage/Overlay"]
+visible = false
+margin_left = 453.059
+margin_top = -235.969
+margin_right = 1512.06
+margin_bottom = 823.031
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerText" parent="Main/BGImage/Overlay/Vitoria" instance=ExtResource( 19 )]
+visible = false
+margin_left = -27.8363
+margin_top = 268.796
+margin_right = 188.164
+margin_bottom = 301.796
+rect_scale = Vector2( 5, 5 )
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 1, 0.788235, 0.160784, 1 )
+custom_colors/font_color_shadow = Color( 0.0627451, 0.152941, 0.447059, 1 )
+
+[node name="VitoriaBGM" type="AudioStreamPlayer" parent="Main/BGImage/Overlay/Vitoria"]
+stream = ExtResource( 18 )
+
+[node name="Pontos" type="Label" parent="Main/BGImage/Overlay/Vitoria"]
+visible = false
+margin_left = -100.868
+margin_top = 782.0
+margin_right = 144.132
+margin_bottom = 836.0
+rect_scale = Vector2( 5, 5 )
+custom_fonts/font = ExtResource( 20 )
+custom_colors/font_color = Color( 1, 0.788235, 0.160784, 1 )
+custom_colors/font_outline_modulate = Color( 0.0627451, 0.152941, 0.447059, 1 )
+custom_colors/font_color_shadow = Color( 0.0627451, 0.152941, 0.447059, 1 )
+custom_constants/shadow_as_outline = 4
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Voltar2" type="TextureButton" parent="Main/BGImage/Overlay"]
+visible = false
+margin_left = 849.51
+margin_top = 813.765
+margin_right = 1077.51
+margin_bottom = 1041.76
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 21 )
+texture_hover = ExtResource( 22 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="VoltarConfirm" type="NinePatchRect" parent="Main/BGImage/Overlay"]
+visible = false
+margin_left = 398.776
+margin_top = 47.0
+margin_right = 1373.78
+margin_bottom = 1022.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sim" type="TextureButton" parent="Main/BGImage/Overlay/VoltarConfirm"]
+visible = false
+margin_left = 253.214
+margin_top = 368.459
+margin_right = 745.214
+margin_bottom = 663.459
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nao" type="TextureButton" parent="Main/BGImage/Overlay/VoltarConfirm"]
+visible = false
+margin_left = 253.214
+margin_top = 661.06
+margin_right = 745.214
+margin_bottom = 956.06
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 15 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Main/BGImage/Voltar1" to="Main" method="_on_Voltar1_pressed"]
+[connection signal="pressed" from="Main/BGImage/Overlay/Voltar2" to="Main" method="_on_Voltar2_pressed"]
+[connection signal="pressed" from="Main/BGImage/Overlay/VoltarConfirm/Sim" to="Main" method="_on_Sim_pressed"]
+[connection signal="pressed" from="Main/BGImage/Overlay/VoltarConfirm/Nao" to="Main" method="_on_Nao_pressed"]

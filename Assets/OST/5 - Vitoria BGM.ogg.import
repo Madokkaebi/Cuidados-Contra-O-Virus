@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/5 - Vitoria BGM.ogg-3fdd70ee8f3c662ae6eaf11940e2bc33.oggstr"
+
+[deps]
+
+source_file="res://Assets/OST/5 - Vitoria BGM.ogg"
+dest_files=[ "res://.import/5 - Vitoria BGM.ogg-3fdd70ee8f3c662ae6eaf11940e2bc33.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

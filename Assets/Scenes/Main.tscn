@@ -1,0 +1,92 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Assets/Botoes/Recordes.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Botoes/Sair_Hover.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Botoes/Sair_Selected.png" type="Texture" id=3]
+[ext_resource path="res://Assets/OST/1- Title.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Botoes/Sair.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Botoes/Recordes_Selected.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Imagens/Menu.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Botoes/Recordes_Hover.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Botoes/Start_Selected.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Botoes/Start.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Botoes/Start_Hover.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Scripts/MainMenu.gd" type="Script" id=22]
+[ext_resource path="res://Assets/OST/Clique.wav" type="AudioStream" id=25]
+[ext_resource path="res://Assets/Botoes/Info.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Botoes/Info_Hover.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Botoes/Info_Selected.png" type="Texture" id=28]
+
+[node name="Main" type="Node"]
+script = ExtResource( 22 )
+
+[node name="BGImage" type="NinePatchRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Iniciar" type="TextureButton" parent="BGImage"]
+margin_left = 687.478
+margin_top = 273.095
+margin_right = 1287.48
+margin_bottom = 573.095
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Recordes" type="TextureButton" parent="BGImage"]
+margin_left = 686.98
+margin_top = 544.031
+margin_right = 1286.98
+margin_bottom = 844.031
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sair" type="TextureButton" parent="BGImage"]
+margin_left = 696.0
+margin_top = 798.0
+margin_right = 1296.0
+margin_bottom = 1098.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Creditos" type="TextureButton" parent="BGImage"]
+anchor_right = 0.038
+anchor_bottom = 0.079
+margin_left = 1719.38
+margin_top = 911.955
+margin_right = 1763.42
+margin_bottom = 943.635
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 28 )
+texture_hover = ExtResource( 27 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BGM" type="AudioStreamPlayer" parent="BGImage"]
+stream = ExtResource( 4 )
+volume_db = -1.01
+
+[node name="ClickSFX" type="AudioStreamPlayer" parent="BGImage"]
+stream = ExtResource( 25 )
+volume_db = -1.01
+[connection signal="pressed" from="BGImage/Iniciar" to="." method="_on_Iniciar_pressed"]
+[connection signal="pressed" from="BGImage/Recordes" to="." method="_on_Recordes_pressed"]
+[connection signal="pressed" from="BGImage/Sair" to="." method="_on_Sair_pressed"]
+[connection signal="pressed" from="BGImage/Creditos" to="." method="_on_Creditos_pressed"]

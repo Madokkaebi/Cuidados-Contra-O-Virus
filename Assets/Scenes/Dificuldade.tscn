@@ -1,0 +1,99 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Botoes/Dificil.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Botoes/Voltar.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Botoes/Facil_Hover.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Botoes/Voltar_Hover.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Botoes/Voltar_Selected.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Botoes/Facil_Selected.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Botoes/Facil.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Botoes/Medio_Hover.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Botoes/Medio_Selected.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Botoes/Dificil_Selected.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Botoes/Dificil_Hover.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Botoes/Medio.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Scripts/Dificuldade.gd" type="Script" id=13]
+[ext_resource path="res://Assets/Scenes/Transition_Scene.tscn" type="PackedScene" id=14]
+
+[node name="Dificuldade" type="CanvasLayer"]
+script = ExtResource( 13 )
+
+[node name="Overlay" type="ColorRect" parent="."]
+visible = false
+margin_right = 1927.0
+margin_bottom = 1094.0
+color = Color( 0, 0, 0, 0.635294 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoClick" type="Control" parent="."]
+visible = false
+margin_right = 1920.0
+margin_bottom = 1088.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Facil" type="TextureButton" parent="."]
+visible = false
+margin_left = 146.583
+margin_top = 394.082
+margin_right = 556.586
+margin_bottom = 679.082
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Medio" type="TextureButton" parent="."]
+visible = false
+margin_left = 765.357
+margin_top = 394.082
+margin_right = 1175.36
+margin_bottom = 679.082
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dificil" type="TextureButton" parent="."]
+visible = false
+margin_left = 1373.47
+margin_top = 395.97
+margin_right = 1783.46
+margin_bottom = 680.971
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Voltar" type="TextureButton" parent="."]
+visible = false
+margin_left = 1807.0
+margin_top = 11.0
+margin_right = 1909.0
+margin_bottom = 113.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Transition_Scene" parent="." instance=ExtResource( 14 )]
+[connection signal="pressed" from="Facil" to="." method="_on_Facil_pressed"]
+[connection signal="pressed" from="Medio" to="." method="_on_Medio_pressed"]
+[connection signal="pressed" from="Dificil" to="." method="_on_Dificil_pressed"]
+[connection signal="pressed" from="Voltar" to="." method="_on_Voltar_pressed"]
+[connection signal="transitioned" from="Transition_Scene" to="." method="_on_Transition_Scene_transitioned"]
